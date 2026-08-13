@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>gakumas-ai-importer-登録集中コンパクトバージョン.html</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<style>
+:root,[data-theme="light"]{--bg:#f7f6f2;--surface:#fbfbf9;--surface2:#f1eee8;--text:#28251d;--muted:#6f6d67;--border:rgba(40,37,29,.12);--primary:#01696f;--primary-soft:rgba(1,105,111,.08);--danger:#a13544;--ok:#437a22;--warn:#964219;--shadow:0 8px 20px rgba(28,24,16,.06);--radius:16px}
+[data-theme="dark"]{--bg:#171614;--surface:#1d1c1a;--surface2:#252320;--text:#ece8df;--muted:#aaa59b;--border:rgba(255,255,255,.12);--primary:#4f98a3;--primary-soft:rgba(79,152,163,.14);--danger:#dd6974;--ok:#6daa45;--warn:#bb653b;--shadow:0 10px 28px rgba(0,0,0,.28)}
+*{box-sizing:border-box}html,body{margin:0}body{font-family:'Satoshi',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.45;padding-bottom:214px}button,input,textarea,select{font:inherit}button{cursor:pointer}
+.shell{max-width:1180px;margin:0 auto;padding:14px}.header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:.98rem}.logo{width:34px;height:34px;border-radius:12px;background:linear-gradient(135deg,var(--primary),transparent),var(--surface2);display:grid;place-items:center;box-shadow:var(--shadow)}.logo svg{width:20px;height:20px}.header-actions{display:flex;align-items:center;gap:8px;position:relative}.theme-btn,.notice-btn{border:1px solid var(--border);background:var(--surface);color:var(--text);padding:8px 10px;border-radius:999px}.notice-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-width:42px;height:42px}.notice-badge{position:absolute;top:-4px;right:-2px;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--primary);color:#fff;font-size:.68rem;display:grid;place-items:center}.notice-overlay{position:fixed;inset:0;background:color-mix(in srgb,var(--bg) 65%, transparent);backdrop-filter:blur(8px);display:none;z-index:80;padding:20px;align-items:flex-start;justify-content:flex-end}.notice-overlay.open{display:flex}.notice-panel{margin-top:12px;width:min(560px,100%);max-height:min(78vh,760px);background:var(--surface);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow);padding:14px;display:flex;flex-direction:column}.notice-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}.notice-list{display:grid;gap:8px;max-height:none;overflow:auto;padding-right:2px}.notice-item{border:1px solid var(--border);border-radius:12px;padding:10px 12px;background:var(--bg)}.notice-item small{display:block;color:var(--muted);margin-top:4px}.notice-empty{padding:18px;border:1px dashed var(--border);border-radius:12px;background:var(--bg);color:var(--muted);font-size:.88rem;text-align:center}.danger-zone{margin-top:10px;padding:10px;border:1px dashed rgba(161,53,68,.35);border-radius:12px;background:rgba(161,53,68,.05)}.danger-copy{font-size:.78rem;color:var(--muted);margin-bottom:8px}.manage-overlay{position:fixed;left:12px;right:12px;bottom:142px;display:none;justify-content:center;z-index:45;pointer-events:none}.manage-overlay.active{display:flex}.confirm-sheet{width:min(100%,620px);background:var(--surface);border:1px solid rgba(161,53,68,.24);border-radius:16px;box-shadow:var(--shadow);padding:12px;pointer-events:auto}.confirm-sheet .title-row{display:flex;justify-content:space-between;gap:8px;align-items:center}.confirm-title{font-size:.9rem;font-weight:700}.confirm-copy{font-size:.8rem;color:var(--muted);margin-top:4px}.confirm-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}@media (max-width:720px){.notice-overlay{padding:12px}.notice-panel{width:100%;max-height:calc(100dvh - 24px);margin-top:0}}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px}.label{font-size:.72rem;color:var(--muted);margin-bottom:6px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}.note{font-size:.84rem;color:var(--muted)}.badge{display:inline-flex;align-items:center;padding:4px 8px;border-radius:999px;background:var(--surface2);border:1px solid var(--border);font-size:.76rem;color:var(--muted);margin-bottom:6px}
+textarea,input,select{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:9px 11px;color:var(--text);font-size:.88rem}textarea{min-height:104px;resize:vertical}.row{display:flex;gap:8px;flex-wrap:wrap}.btn{border:none;border-radius:999px;padding:10px 14px;font-weight:700;font-size:.9rem}.btn-primary{background:var(--primary);color:#fff}.btn-secondary{background:var(--surface2);color:var(--text);border:1px solid var(--border)}.btn-danger{background:var(--danger);color:#fff}
+.prompt-copy-btn{padding:10px 11px;font-size:.8rem;letter-spacing:.01em}
+.desktop-tabs{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}.desktop-tabs .tab-chip{border:1px solid var(--border);background:var(--surface);border-radius:999px;padding:8px 12px;color:var(--muted);font-size:.9rem}.desktop-tabs .tab-chip.active{background:var(--primary);color:#fff;border-color:transparent}
+.register-layout{display:grid;grid-template-columns:1fr;gap:12px}.stack{display:grid;gap:10px}.results{display:grid;gap:6px}.story-card{border:1px solid var(--border);border-radius:14px;background:var(--bg);overflow:hidden}.story-head{padding:8px 10px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;gap:8px;align-items:center;background:var(--surface2);font-size:.88rem}.story-body{padding:6px 8px 8px;font-size:.84rem}.line{display:grid;grid-template-columns:42px 132px 1fr auto;gap:6px;align-items:start;padding:6px;border-radius:10px;font-size:.82rem}.line + .line{margin-top:3px}.line.hit{background:var(--primary-soft);border:1px solid rgba(1,105,111,.16)}.line textarea{min-height:56px;background:var(--surface);font-size:.82rem}.status-ok{color:var(--ok)}.status-warn{color:var(--warn)}.hitmark{font-size:.68rem;padding:2px 6px;border-radius:999px;background:var(--primary);color:white}.muted{color:var(--muted)} mark{background:rgba(255,217,0,.35);padding:0 .12em;border-radius:.2em}.small{font-size:.76rem}.search-shell{display:grid;grid-template-columns:1fr 170px;gap:8px}.story-actions{display:flex;gap:6px;flex-wrap:wrap}.story-actions .btn{padding:8px 11px;font-size:.8rem}.story-meta{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.empty{padding:14px;border:1px dashed var(--border);border-radius:14px;background:var(--bg);color:var(--muted);font-size:.84rem}.dict-box{max-height:76px;overflow:auto;padding:8px;border:1px solid var(--border);border-radius:10px;background:var(--bg)}
+.prompt-preview{min-height:180px}.pill-list{display:flex;gap:6px;flex-wrap:wrap}.pill{padding:5px 8px;border:1px solid var(--border);border-radius:999px;background:var(--surface2);font-size:.8rem}.code{font-family:ui-monospace,SFMono-Regular,monospace;font-size:.76rem;white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--border);padding:8px;border-radius:10px;max-height:280px;overflow:auto;line-height:1.4}.view{display:none}.view.active{display:block}
+.bottom-tabs{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(4,1fr);z-index:20}.tab-btn{border:0;background:none;padding:8px 6px 10px;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:4px;min-height:66px;font-size:.82rem}.tab-btn svg{width:22px;height:22px}.tab-btn.active{color:var(--primary);font-weight:700}
+@media (max-width:980px){.register-layout,.search-shell,.line{grid-template-columns:1fr}.shell{padding:12px}}
+@media (min-width:821px){.bottom-tabs{display:none}}
+@media (max-width:820px){.desktop-tabs{display:none}}
+.toast-wrap{position:fixed;left:12px;right:12px;bottom:78px;display:grid;gap:8px;z-index:50;pointer-events:none;justify-items:center}.toast{width:min(100%,560px);padding:10px 12px;border-radius:12px;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow);font-size:.88rem;pointer-events:auto}.toast.success{border-color:rgba(67,122,34,.28)}.toast.error{border-color:rgba(161,53,68,.28)}.btn:active,.tab-btn:active,.tab-chip:active{transform:scale(.98)}.compact-register .label,.compact-manage .label{font-size:.68rem;margin-bottom:4px}.compact-register .badge,.compact-manage .badge{font-size:.72rem;padding:3px 7px}.compact-register #storyTitle{font-size:.86rem}.compact-register #dbCount{font-size:.9rem}.compact-register .btn,.compact-manage .btn{font-size:.82rem;padding:8px 12px}.compact-manage #manageSearchBox,.compact-register #jsonInput{font-size:.86rem}.compact-register .row[style*="align-items:end"]{gap:6px}.compact-manage .row[style*="justify-content:space-between"]{gap:8px}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="header">
+    <div class="brand"><div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 18V6l7 4 7-4v12l-7 4-7-4Z"/><path d="M12 10v12"/></svg></div><div>学マス AI取込アプリ 登録集中コンパクトバージョン</div></div>
+    <div class="header-actions">
+      <button class="notice-btn" id="noticeShortcutBtn" aria-label="通知履歴タブへ移動">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 17h5l-1.4-1.4A2 2 0 0 1 18 14.2V10a6 6 0 1 0-12 0v4.2a2 2 0 0 1-.6 1.4L4 17h5"/><path d="M10 17a2 2 0 0 0 4 0"/></svg>
+        <span class="notice-badge" id="noticeBadgeHeader">0</span>
+      </button>
+      <button class="theme-btn" data-theme-toggle aria-label="テーマ切替">◐</button>
+    </div>
+  </header>
+
+  <div class="desktop-tabs">
+    <button class="tab-chip active" data-tab="register">登録</button>
+    <button class="tab-chip" data-tab="search">検索</button>
+    <button class="tab-chip" data-tab="manage">管理</button>
+    <button class="tab-chip" data-tab="dict">辞書</button>
+    <button class="tab-chip" data-tab="notices">通知履歴 <span class="notice-badge" id="noticeBadge">0</span></button>
+  </div>
+
+  <section class="view active" data-view="register">
+    <div class="register-layout">
+      <main class="stack">
+        <div class="panel compact-register">
+          <div class="badge">登録タブ</div>
+          <div class="label">AI返答(JSON)</div>
+          <textarea id="jsonInput" placeholder='例: {"story_title":"親愛度コミュ 千奈","dialogues":[{"character":"倉本千奈","speaker_type":"character","text":"..."}]}'></textarea>
+          <div class="row" style="margin-top:8px">
+            <button class="btn btn-primary" id="importBtn">JSON読込</button>
+            <button class="btn btn-secondary" id="loadSampleBtn">サンプル</button>
+            <button class="btn btn-secondary prompt-copy-btn" id="copyPromptBtn">AIプロンプトコピー</button>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="row" style="align-items:end">
+            <div style="flex:2">
+              <div class="label">ストーリー名</div>
+              <input id="storyTitle" placeholder="親愛度コミュ 千奈1話" />
+            </div>
+            <div>
+              <div class="label">保存件数</div>
+              <div class="badge"><span id="dbCount">0</span> 件</div>
+            </div>
+            <div style="flex:0 0 auto">
+              <button class="btn btn-primary" id="saveBtn">保存</button>
+            </div>
+          </div>
+          <div class="results" id="editorList" style="margin-top:12px"></div>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <section class="view" data-view="search">
+    <div class="panel stack">
+      <div>
+        <div class="badge">検索タブ</div>
+        <div class="label">検索</div>
+        <div class="search-shell">
+          <input id="searchBox" placeholder="セリフ、ストーリー名、キャラ名で検索" />
+          <select id="characterFilter"><option value="">キャラ:全て</option></select>
+          
+        </div>
+      </div>
+      <div class="results" id="searchResults"></div>
+    </div>
+  </section>
+
+  <section class="view" data-view="dict">
+    <div class="stack">
+      <div class="panel">
+        <div class="badge">辞書タブ</div>
+        <div class="label">キャラ辞書</div>
+        <div class="dict-box"><div class="pill-list" id="dictView"></div></div>
+        <div class="label" style="margin-top:10px">辞書編集</div>
+        <textarea id="dictEditor" placeholder="1行に1キャラ名、またはJSON配列で編集"></textarea>
+        <div class="row" style="margin-top:8px">
+          <button class="btn btn-primary" id="applyDictBtn">反映</button>
+          <button class="btn btn-secondary" id="resetDictBtn">初期化</button>
+        </div>
+        <div class="label" style="margin-top:10px">AI用プロンプト</div>
+        <div class="code prompt-preview" id="promptTemplate"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" data-view="notices">
+    <div class="stack">
+      <div class="panel">
+        <div class="notice-head">
+          <div>
+            <div class="badge">通知履歴タブ</div>
+            <div class="label">通知履歴</div>
+          </div>
+          <button class="btn btn-secondary" id="clearNoticeBtn">消去</button>
+        </div>
+        <div class="notice-list" id="noticeList"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" data-view="manage">
+    <div class="stack">
+      <div class="panel compact-manage">
+        <div class="badge">管理タブ</div>
+        <div class="row" style="justify-content:space-between;align-items:end">
+          <div style="flex:1">
+            <div class="label">登録済みストーリー</div>
+            <input id="manageSearchBox" placeholder="ストーリー名で絞り込み" />
+          </div>
+          <div class="row">
+            <button class="btn btn-secondary" id="downloadBtn">JSON書出し</button>
+          </div>
+        </div>
+      </div>
+      <div class="results" id="storyList"></div>
+    </div>
+  </section>
+</div>
+
+<div class="manage-overlay" id="deleteConfirmOverlay">
+  <div class="confirm-sheet">
+    <div class="title-row">
+      <div>
+        <div class="confirm-title" id="deleteConfirmTitle">削除対象を選択してください</div>
+        <div class="confirm-copy">このストーリーを削除します。元に戻せません。</div>
+      </div>
+      <span class="badge">削除確認</span>
+    </div>
+    <div class="confirm-actions">
+      <button class="btn btn-secondary" id="cancelDeleteBtn">キャンセル</button>
+      <button class="btn btn-danger" id="confirmDeleteBtn">このタイトルを削除する</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast-wrap" id="toastWrap"></div>
+
+<nav class="bottom-tabs" aria-label="メインタブ">
+  <button class="tab-btn active" data-tab="register" aria-label="登録">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
+    <span>登録</span>
+  </button>
+  <button class="tab-btn" data-tab="search" aria-label="検索">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 5 5"/></svg>
+    <span>検索</span>
+  </button>
+  <button class="tab-btn" data-tab="manage" aria-label="管理">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+    <span>管理</span>
+  </button>
+  <button class="tab-btn" data-tab="dict" aria-label="辞書">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3Z"/><path d="M8 4v16"/><path d="M12 8h4"/><path d="M12 12h4"/></svg>
+    <span>辞書</span>
+  </button>
+</nav>
+
+<script>
+const defaultCharacterDict = ["花海咲季","月村手毬","藤田ことね","有村麻央","葛城リーリヤ","倉本千奈","紫雲清夏","篠澤広","姫崎莉波","花海佑芽","秦谷美鈴","十王星南","雨夜燕","メガルー","香名江","賀陽燐羽","白草四音","白草月花","藍井撫子","根緒亜紗里","十王邦夫","十王龍正","Owl","愁佳","ボーカルトレーナー","ダンストレーナー","ビジュアルトレーナー","黒井崇男","真白優","その他"];
+let characterDict = [...defaultCharacterDict];
+let theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+document.documentElement.setAttribute('data-theme', theme);
+document.querySelector('[data-theme-toggle]').addEventListener('click', ()=>{theme = theme === 'dark' ? 'light' : 'dark'; document.documentElement.setAttribute('data-theme', theme);});
+const STORAGE_KEY = 'gakumas_ai_importer_v1';
+const NOTICE_STORAGE_KEY = 'gakumas_ai_importer_notices_v1';
+let imported = []; let stories = []; let searchRows = []; let editingStoryId = null;
+let notices = [];
+let pendingDeleteStoryId = null;
+let deleteTargetStoryId = null;
+const els = {
+  jsonInput: document.getElementById('jsonInput'), storyTitle: document.getElementById('storyTitle'), editorList: document.getElementById('editorList'), dbCount: document.getElementById('dbCount'), searchBox: document.getElementById('searchBox'), characterFilter: document.getElementById('characterFilter'), searchResults: document.getElementById('searchResults'), dictView: document.getElementById('dictView'), dictEditor: document.getElementById('dictEditor'), promptTemplate: document.getElementById('promptTemplate'), storyList: document.getElementById('storyList'), manageSearchBox: document.getElementById('manageSearchBox'), toastWrap: document.getElementById('toastWrap'), noticeList: document.getElementById('noticeList'), noticeBadge: document.getElementById('noticeBadge'), noticeBadgeHeader: document.getElementById('noticeBadgeHeader'), noticeShortcutBtn: document.getElementById('noticeShortcutBtn'), clearNoticeBtn: document.getElementById('clearNoticeBtn'), deleteConfirmOverlay: document.getElementById('deleteConfirmOverlay'), deleteConfirmTitle: document.getElementById('deleteConfirmTitle'), cancelDeleteBtn: document.getElementById('cancelDeleteBtn'), confirmDeleteBtn: document.getElementById('confirmDeleteBtn')
+};
+function normalizeName(s){ return String(s || '').normalize('NFKC').replace(/\s+/g, '').trim().toLowerCase(); }
+function formatNoticeTime(ts){ return new Date(ts).toLocaleString('ja-JP', { month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit' }); }
+function saveNotices(){ try{ localStorage.setItem(NOTICE_STORAGE_KEY, JSON.stringify(notices)); }catch(e){ console.error(e); } }
+function loadNotices(){ try{ const raw = localStorage.getItem(NOTICE_STORAGE_KEY); if(!raw) return; const parsed = JSON.parse(raw); if(Array.isArray(parsed)) notices = parsed; }catch(e){ console.error(e); } }
+function renderNotices(){ if(!els.noticeList) return; const count = String(notices.length); if(els.noticeBadge) els.noticeBadge.textContent = count; if(els.noticeBadgeHeader) els.noticeBadgeHeader.textContent = count; els.noticeList.innerHTML = notices.length ? notices.map(n => `<div class="notice-item"><div>${escapeHtml(n.message)}</div><small>${formatNoticeTime(n.timestamp)}</small></div>`).join('') : '<div class="notice-empty">通知履歴はまだありません</div>'; }
+function addNotice(message, type='success'){ notices.unshift({ message, type, timestamp: Date.now() }); notices = notices.slice(0, 40); saveNotices(); renderNotices(); }
+function showToast(message, type='success'){ addNotice(message, type); const el=document.createElement('div'); el.className=`toast ${type}`; el.textContent=message; els.toastWrap.appendChild(el); setTimeout(()=>{ el.style.opacity='0'; el.style.transform='translateY(-4px)'; el.style.transition='all .18s ease'; }, 1800); setTimeout(()=>el.remove(), 2100); }
+function escapeHtml(str){ return String(str).replace(/[&<>\"]/g, s=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[s])); }
+function escapeRegExp(s){ return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+function uniqueCleanNames(list){ const seen = new Set(), out = []; for(const raw of list){ const name = String(raw || '').trim(); const key = normalizeName(name); if(!name || seen.has(key)) continue; seen.add(key); out.push(name);} return out; }
+function parseDictInput(input){ const text = String(input || '').trim(); if(!text) return []; if(text.startsWith('[')){ const parsed = JSON.parse(text); if(!Array.isArray(parsed)) throw new Error('JSON配列ではありません'); return uniqueCleanNames(parsed); } return uniqueCleanNames(text.split(/\r?\n/)); }
+function buildPrompt(){ return `以下の画像内の会話ログを読み取り、説明文なしでJSONだけを返してください。前置き・補足・Markdownコードブロックは不要です。\n\nルール:\n- character は次の一覧から最も適切な正式名を1つ選ぶこと。勝手に新しい名前を作らないこと。\n- 一覧に存在しない話者は、見たまま character に入れてよい。\n- セリフ本文 text は画像の表示どおりに自然な日本語で抜き出す。\n- 1発言ごとに dialogues の1要素へ分けること。\n- 出力は必ず次のJSON形式に一致させる。\n\nキャラ一覧:\n${JSON.stringify(characterDict, null, 2)}\n\n出力形式:\n{\n  \"story_title\": \"任意のストーリー名\",\n  \"dialogues\": [\n    {\n      \"order\": 1,\n      \"character\": \"${characterDict[0] || '倉本千奈'}\",\n      \"text\": \"セリフ本文\"\n    }\n  ]\n}`; }
+function renderPrompt(){ if(els.promptTemplate) els.promptTemplate.textContent = buildPrompt(); }
+function saveToStorage(){ try{ const payload = { characterDict, stories }; localStorage.setItem(STORAGE_KEY, JSON.stringify(payload)); return true; }catch(e){ console.error(e); showToast('ブラウザ保存に失敗しました', 'error'); return false; } }
+function loadFromStorage(){ try{ const raw = localStorage.getItem(STORAGE_KEY); if(!raw) return false; const parsed = JSON.parse(raw); if(Array.isArray(parsed.characterDict) && parsed.characterDict.length) characterDict = uniqueCleanNames(parsed.characterDict); if(Array.isArray(parsed.stories)) stories = parsed.stories; return true; }catch(e){ console.error(e); showToast('保存データを読み込めませんでした', 'error'); return false; } }
+function renderDict(){ els.dictView.innerHTML = characterDict.map(name => `<span class="pill">${escapeHtml(name)}</span>`).join(''); els.dictEditor.value = JSON.stringify(characterDict, null, 2); }
+function levenshtein(a, b){ a=normalizeName(a); b=normalizeName(b); const dp=Array.from({length:a.length+1},()=>Array(b.length+1).fill(0)); for(let i=0;i<=a.length;i++) dp[i][0]=i; for(let j=0;j<=b.length;j++) dp[0][j]=j; for(let i=1;i<=a.length;i++){ for(let j=1;j<=b.length;j++){ const cost=a[i-1]===b[j-1]?0:1; dp[i][j]=Math.min(dp[i-1][j]+1, dp[i][j-1]+1, dp[i-1][j-1]+cost);} } return dp[a.length][b.length]; }
+function getSuggestions(name){ const n=normalizeName(name); if(!n || !characterDict.length) return []; return characterDict.map(c=>({name:c,score:levenshtein(n,c)})).sort((a,b)=>a.score-b.score).slice(0,3).map(x=>x.name); }
+function getMatchStatus(name){ const n=normalizeName(name); if(characterDict.some(c=>normalizeName(c)===n)) return {ok:true,label:'辞書一致'}; return {ok:false,label:'その他候補'}; }
+function sampleData(){ return { story_title:'親愛度コミュ 千奈', dialogues:[ {order:1, character:'篠沢広', speaker_type:'character', text:'千奈の張良・広って呼んで。'}, {order:2, character:'花海 佑芽', speaker_type:'character', text:'千奈ちゃんの韓信？ になって、敵をばんばんやっつけます！'}, {order:3, character:'メガルー', speaker_type:'player', text:'では、さっそく演説の練習をしましょう。'} ] }; }
+function switchTab(tab){ document.querySelectorAll('[data-view]').forEach(v => v.classList.toggle('active', v.dataset.view === tab)); document.querySelectorAll('[data-tab]').forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tab)); if(els.noticeShortcutBtn) els.noticeShortcutBtn.dataset.active = tab === 'notices' ? 'true' : 'false'; }
+function renderImported(){
+  const modeBadge = editingStoryId ? '<span class="badge">編集中</span>' : '<span class="badge">新規</span>';
+  els.editorList.innerHTML = `${modeBadge}` + (imported.map((row, i)=>{ const status = getMatchStatus(row.character); const suggestions = getSuggestions(row.character); return `<div class="story-card"><div class="story-body"><div class="line"><input data-field="order" data-i="${i}" value="${row.order ?? i+1}"><div><input data-field="character" data-i="${i}" value="${escapeHtml(row.character || '')}"><div class="note ${status.ok ? 'status-ok' : 'status-warn'} small" style="margin-top:4px">${status.label}</div></div><select data-field="speaker_type" data-i="${i}"><option value="character" ${row.speaker_type==='character'?'selected':''}>character</option><option value="player" ${row.speaker_type==='player'?'selected':''}>player</option><option value="npc" ${row.speaker_type==='npc'?'selected':''}>npc</option></select><select data-suggest data-i="${i}"><option value="">候補</option>${suggestions.map(name => `<option value="${name}">${name}</option>`).join('')}</select><button class="btn btn-danger" data-delete="${i}">削除</button></div><div style="margin-top:8px"><textarea data-field="text" data-i="${i}">${escapeHtml(row.text || '')}</textarea></div></div></div>`; }).join('') || '<div class="empty">まだ読み込み結果がありません</div>');
+  els.editorList.querySelectorAll('[data-field]').forEach(el=>{ const i = Number(el.dataset.i); const field = el.dataset.field; const handler = e => { imported[i][field] = e.target.value; if(field === 'character') renderImported(); }; el.addEventListener('input', handler); el.addEventListener('change', handler); });
+  els.editorList.querySelectorAll('[data-suggest]').forEach(el=> el.addEventListener('change', e=>{ const i=Number(e.target.dataset.i); if(e.target.value){ imported[i].character = e.target.value; renderImported(); } }));
+  els.editorList.querySelectorAll('[data-delete]').forEach(el=> el.addEventListener('click', e=>{ const i=Number(e.target.dataset.delete); imported.splice(i,1); renderImported(); }));
+}
+function importJson(){ try{ const parsed = JSON.parse(els.jsonInput.value.trim()); imported = Array.isArray(parsed.dialogues) ? parsed.dialogues : []; els.storyTitle.value = parsed.story_title || ''; editingStoryId = null; renderImported(); showToast(`JSONを読み込みました（${imported.length}件）`); } catch(e){ showToast('JSONの形式が正しくありません', 'error'); } }
+function saveAll(){ if(!imported.length){ showToast('保存する会話がありません', 'error'); return; } const title = els.storyTitle.value.trim() || '未設定'; const wasEditing = !!editingStoryId; const payload = { id: editingStoryId || (crypto.randomUUID ? crypto.randomUUID() : String(Date.now())), story_title: title, dialogues: imported.map((row, i) => ({ order:Number(row.order || i+1), character:row.character || '不明', text:row.text || '' })) }; if(wasEditing){ const idx = stories.findIndex(s => s.id === editingStoryId); if(idx >= 0) stories[idx] = payload; } else { stories.push(payload); } if(!saveToStorage()) return; imported = []; editingStoryId = null; els.storyTitle.value = ''; els.jsonInput.value = ''; renderImported(); refreshSearch(); renderStoryList(); showToast(wasEditing ? `ストーリーを更新しました: ${title}` : `ストーリーを登録しました: ${title}`); switchTab('manage'); }
+function rebuildRows(){ searchRows = []; stories.forEach(story => (story.dialogues || []).forEach((d, i) => searchRows.push({ id:`${story.id}_${i}`, story_id:story.id, story_title:story.story_title, story_title_norm:normalizeName(story.story_title), order:d.order, character:d.character, character_norm:normalizeName(d.character), text:d.text, text_norm:normalizeName(d.text) }))); }
+function refreshSearch(){ els.dbCount.textContent = stories.length; rebuildRows(); const chars = [...new Set(searchRows.map(d=>d.character))].sort(); els.characterFilter.innerHTML = '<option value="">キャラ:全て</option>' + chars.map(c=>`<option value="${c}">${c}</option>`).join(''); runSearch(); }
+function groupByStory(rows){ const map = new Map(); rows.forEach(r => { if(!map.has(r.story_id)) map.set(r.story_id, { story_title:r.story_title, rows:[] }); map.get(r.story_id).rows.push(r); }); return [...map.values()]; }
+function highlightText(text, query){ const q = String(query || '').trim(); if(!q) return escapeHtml(text); const safe = escapeRegExp(q); try{ return escapeHtml(text).replace(new RegExp(safe, 'gi'), m => `<mark>${m}</mark>`); }catch{ return escapeHtml(text); } }
+function rowMatches(row, query, charFilter){ if(charFilter && row.character !== charFilter) return false; if(!query) return true; const q = normalizeName(query); return row.text_norm.includes(q) || row.story_title_norm.includes(q) || row.character_norm.includes(q); }
+function runSearch(){ const q = els.searchBox.value.trim(); const c = els.characterFilter.value; const matchedRows = searchRows.filter(row => rowMatches(row, q, c)); const grouped = groupByStory(matchedRows).sort((a,b)=>a.story_title.localeCompare(b.story_title, 'ja')); els.searchResults.innerHTML = grouped.map(group => `<div class="story-card"><div class="story-head"><div><strong>${escapeHtml(group.story_title)}</strong></div><div class="muted small">${group.rows.length}件</div></div><div class="story-body">${group.rows.sort((a,b)=>(a.order||0)-(b.order||0)).map(r => `<div class="line hit"><div class="muted">#${r.order ?? ''}</div><div><strong>${highlightText(r.character, q)}</strong></div><div>${highlightText(r.text, q)}</div><div><span class="hitmark">HIT</span></div></div>`).join('')}</div></div>`).join('') || '<div class="empty">該当なし</div>'; }
+function renderStoryList(){ const keyword = normalizeName(els.manageSearchBox.value); const filtered = stories.filter(story => !keyword || normalizeName(story.story_title).includes(keyword)); els.storyList.innerHTML = filtered.map(story => `<div class="story-card"><div class="story-head"><div class="story-meta"><strong>${escapeHtml(story.story_title)}</strong><span class="badge">${story.dialogues.length}行</span></div><div class="story-actions"><button class="btn btn-secondary" data-edit-story="${story.id}">編集</button><button class="btn btn-danger" data-arm-delete-story="${story.id}">削除</button></div></div><div class="story-body">${story.dialogues.map(d => `<div class="line"><div class="muted">#${d.order}</div><div><strong>${escapeHtml(d.character)}</strong></div><div>${escapeHtml(d.text)}</div><div></div></div>`).join('')}</div></div>`).join('') || '<div class="empty">まだストーリーが登録されていません</div>'; els.storyList.querySelectorAll('[data-edit-story]').forEach(btn => btn.addEventListener('click', e => startEditStory(e.target.dataset.editStory))); els.storyList.querySelectorAll('[data-arm-delete-story]').forEach(btn => btn.addEventListener('click', e => openDeleteConfirmTab(e.target.dataset.armDeleteStory))); }
+function startEditStory(storyId){ const story = stories.find(s => s.id === storyId); if(!story) return; pendingDeleteStoryId = null; deleteTargetStoryId = null; editingStoryId = story.id; els.storyTitle.value = story.story_title; imported = story.dialogues.map(d => ({...d})); renderImported(); showToast('編集モードで開きました'); switchTab('register'); }
+function renderDeleteConfirm(){ const story = stories.find(s => s.id === deleteTargetStoryId); if(!story){ els.deleteConfirmTitle.textContent = '削除対象を選択してください'; els.confirmDeleteBtn.disabled = true; els.deleteConfirmOverlay.classList.remove('active'); return; } els.deleteConfirmTitle.textContent = story.story_title; els.confirmDeleteBtn.textContent = `「${story.story_title}」を削除する`; els.confirmDeleteBtn.disabled = false; els.deleteConfirmOverlay.classList.add('active'); }
+function openDeleteConfirmTab(storyId){ deleteTargetStoryId = storyId; renderDeleteConfirm(); const story = stories.find(s => s.id === storyId); if(story) showToast(`削除確認を開きました: ${story.story_title}`, 'error'); switchTab('manage'); }
+function cancelDeleteConfirm(){ deleteTargetStoryId = null; renderDeleteConfirm(); switchTab('manage'); }
+function deleteStory(storyId){ const story = stories.find(s => s.id === storyId); stories = stories.filter(s => s.id !== storyId); pendingDeleteStoryId = null; deleteTargetStoryId = null; if(editingStoryId === storyId){ editingStoryId = null; imported = []; els.storyTitle.value = ''; renderImported(); } saveToStorage(); refreshSearch(); renderStoryList(); renderDeleteConfirm(); showToast(story ? `ストーリーを削除しました: ${story.story_title}` : 'ストーリーを削除しました'); switchTab('manage'); }
+function applyDict(){ try{ const parsed = parseDictInput(els.dictEditor.value); if(!parsed.length) throw new Error('辞書が空です'); characterDict = parsed; saveToStorage(); renderDict(); renderPrompt(); renderImported(); showToast('キャラ辞書を更新しました'); }catch(e){ showToast('辞書を更新できませんでした: ' + e.message, 'error'); } }
+function resetDict(){ characterDict = [...defaultCharacterDict]; saveToStorage(); renderDict(); renderPrompt(); renderImported(); showToast('初期辞書に戻しました'); }
+function downloadJson(){ const blob = new Blob([JSON.stringify({ character_dict: characterDict, stories }, null, 2)], {type:'application/json'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='gakumas_stories_with_dict.json'; a.click(); showToast('JSONを書き出しました'); }
+document.getElementById('importBtn').addEventListener('click', importJson); document.getElementById('loadSampleBtn').addEventListener('click', ()=>{ els.jsonInput.value = JSON.stringify(sampleData(), null, 2); importJson(); }); document.getElementById('copyPromptBtn').addEventListener('click', async ()=>{ try{ await navigator.clipboard.writeText(buildPrompt()); showToast('AI用プロンプトをコピーしました'); }catch(e){ showToast('コピーできませんでした', 'error'); } }); document.getElementById('saveBtn').addEventListener('click', saveAll); document.getElementById('downloadBtn').addEventListener('click', downloadJson); document.getElementById('applyDictBtn').addEventListener('click', applyDict); document.getElementById('resetDictBtn').addEventListener('click', resetDict); els.searchBox.addEventListener('input', runSearch); els.characterFilter.addEventListener('change', runSearch); els.manageSearchBox.addEventListener('input', renderStoryList); document.querySelectorAll('[data-tab]').forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.tab))); els.cancelDeleteBtn.addEventListener('click', cancelDeleteConfirm); els.confirmDeleteBtn.addEventListener('click', ()=>{ if(deleteTargetStoryId) deleteStory(deleteTargetStoryId); });
+if(els.noticeShortcutBtn) els.noticeShortcutBtn.addEventListener('click', ()=> switchTab('notices'));
+els.clearNoticeBtn.addEventListener('click', ()=>{ notices = []; saveNotices(); renderNotices(); showToast('通知履歴を消去しました'); });
+const loadedFromStorage = loadFromStorage();
+loadNotices();
+renderDict(); renderPrompt(); refreshSearch(); renderImported(); renderStoryList(); renderDeleteConfirm(); renderNotices(); switchTab('register');
+if(loadedFromStorage){ showToast('保存データを読み込みました'); }
+</script>
+</body>
+</html>
